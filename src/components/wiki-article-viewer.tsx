@@ -85,19 +85,19 @@ export default function WikiArticleViewer({
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center">
               <User className="h-4 w-4 mr-1" />
-              <span>By {article.author ?? "Unknown"}</span>
+              <span>
+                By {article.author ?? "Unknown"}{" "}
+                <Badge variant="secondary">Article</Badge>
+              </span>
             </div>
             <div className="flex items-center">
               <Calendar className="h-4 w-4 mr-1" />
               <span>{formatDate(article.createdAt)}</span>
             </div>
-            <div className="flex items-center">
-              <Badge variant="secondary">Article</Badge>
-              <div className="ml-3 flex items-center text-sm text-muted-foreground">
-                <Eye className="h-4 w-4 mr-1" />
-                <span>{localPageviews ? localPageviews : "—"}</span>
-                <span className="ml-1">views</span>
-              </div>
+            <div className="flex items-center text-sm text-muted-foreground">
+              <Eye className="h-4 w-4 mr-1" />
+              <span>{localPageviews ? localPageviews : "—"}</span>
+              <span className="ml-1">views</span>
             </div>
           </div>
         </div>
